@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:08:53 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/09 02:24:44 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 19:09:10 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int main()
 	dog1.setBrainIdeas(0, "Dog wishes to rule the cats.");
 	
 	
-	Cat	cat2 = cat1;
+	Cat	cat2(cat1);
 	std::cout << "cat1's idea : " << (cat1.getBrainIdeas())[0] << std::endl;
 	std::cout << "cat1's idea address : " << &((cat1.getBrainIdeas())[0]) << std::endl;
 	std::cout << "cat2's idea : " << (cat2.getBrainIdeas())[0] << std::endl;
-	std::cout << "cat2's idea address : " << &((cat1.getBrainIdeas())[0]) << std::endl;
+	std::cout << "cat2's idea address : " << &((cat2.getBrainIdeas())[0]) << std::endl;
 	
-	Dog	dog2(dog1);
+	Dog	dog2 = dog1;
 	std::cout << "dog1's idea : " << (dog1.getBrainIdeas())[0] << std::endl;
 	std::cout << "dog1's idea address : " << &((dog1.getBrainIdeas())[0]) << std::endl;
 	std::cout << "dog2's idea : " << (dog2.getBrainIdeas())[0] << std::endl;

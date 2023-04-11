@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:04:09 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 23:31:25 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 19:08:40 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@ Cat::~Cat()
 Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat copy constructor called\n";
-	delete brain;
 	brain = new Brain(*other.brain);
+	type = other.type;
 }
 
 Cat&	Cat::operator=(const Cat& other)
 {
 	delete brain;
 	brain = new Brain(*other.brain);
+	type = other.type;
 	return *this;
 }
 

@@ -1,4 +1,4 @@
-NAME		=	animalBrain
+NAME		=	brain
 SRCS_DIR	=	srcs/
 OBJS_DIR	=	objs/
 FILES		=	main Animal Cat Dog Brain WrongAnimal WrongCat
@@ -13,8 +13,8 @@ all:
 	mkdir -p $(OBJS_DIR)
 	make $(NAME)
 
-$(NAME):$(SRCS)
-	$(GCPP) $(FSAN) $(CFLAGS) -o $(NAME) $(SRCS)
+$(NAME):$(OBJS)
+	$(GCPP) $(CFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJS_DIR)%.o:$(SRCS_DIR)%.cpp
 	$(GCPP) $(CFLAGS) -c $< -o $@
