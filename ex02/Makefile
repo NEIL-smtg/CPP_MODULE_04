@@ -13,8 +13,8 @@ all:
 	mkdir -p $(OBJS_DIR)
 	make $(NAME)
 
-$(NAME):$(SRCS)
-	$(GCPP) $(FSAN) $(CFLAGS) -o $(NAME) $(SRCS)
+$(NAME):$(OBJS)
+	$(GCPP) $(FSAN) $(CFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJS_DIR)%.o:$(SRCS_DIR)%.cpp
 	$(GCPP) $(CFLAGS) -c $< -o $@
